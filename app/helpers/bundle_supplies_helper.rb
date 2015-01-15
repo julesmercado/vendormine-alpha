@@ -1,0 +1,2 @@
+module BundleSuppliesHelper
+end

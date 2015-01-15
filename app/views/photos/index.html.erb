@@ -1,0 +1,4 @@
+<%= form_for Photos.new do |f| %>
+	<%= f.label :avatar, "Clearances" %>
+	<%= f.file_field :avatar, multiple: true, name: "clearance[avatar]" %> 
+<% end %>

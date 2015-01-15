@@ -1,0 +1,50 @@
+<button type="button" ng-click="getSupplies(sessionUser)" class="btn btn-primary pull-right pull-bottom" data-toggle="modal" data-target="#myModal">
+  Add Supply
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add Supply</h4>
+      </div>
+      <div class="modal-body">
+
+        <form name="supplyForm" novalidate>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Supply name</label>
+            <input type="text"  name="name" class="form-control" id="exampleInputEmail1" placeholder="Supply name" ng-model="bundle.bundle_name">
+          </div>
+
+          <div class="form-group">
+            <label ng-repeat="supply in supplies">
+              <input type="checkbox" checklist-model="bundle.supplies" checklist-value="supply.id"> {{supply.supply_name}}
+            </label>
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputEmail1">Pricing model</label>
+            <select class="form-control" ng-model="bundle.pricing" ng-options="pricing for pricing in pricings" required>
+              <option value="">Choose Price Model</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputPassword1">Price</label>
+            <input type="text" name="price" class="form-control" id="exampleInputPassword1" placeholder="Password" ng-model="bundle.price">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Description</label>
+            <textarea name="desc" class="form-control" rows="3" ng-model="bundle.desc"></textarea>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" ng-click="createBundle(sessionUser)" data-dismiss="modal" >Save changes</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+
+<div class="col-md-9 content-container">
+  <div class="row add-supply">
+    <div class="row">
+      <div class="col-md-6 new-supply">
+        <h2>New Supply</h2>
+      </div>
+    </div>
+
+    <div class="row">
+    <div class="col-md-6">
+      <%= form_for [@supplier,@supply] do |f| %>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Supply name</label>
+          <%= f.text_field :supply_name, class:'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputEmail1">Pricing model</label>
+          <%= f.select :pricing, %w{ Per-Hour Per-Pax Fixed-Rate }, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputEmail1">Supply Price</label>
+          <%= f.text_field :supply_price, class:'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputPassword1">Description</label>
+          <%= f.text_area :supply_desc, class:'form-control', rows:'5' %>
+        </div>
+        <%= f.submit "Add Supply", class: 'btn btn-lg btn-success' %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,69 @@
+
+<!-- <div supply-panel>
+  
+</div> -->
+<div class="col-md-9 content-container">
+	<div class="row">
+		<h2 class="supply-header">Supply</h2>
+		<div class="col-md-12">
+			<table class="table table-bordered">
+	        <thead>
+	          <tr>
+	            <th>Supply Name</th>
+	            <th>Pricing model</th>
+	            <th>Price</th>
+	            <th>Description</th>
+	            <th>Action</th>
+	          </tr>
+	        </thead>
+	        <tbody>
+	        <% @supply.each do |s| %>
+	          <tr>
+	            <td><%= s.supply_name %></td>
+	            <td><%= s.pricing %></td>
+	            <td>PHP <%= s.supply_price %></td>
+	            <td><%= s.supply_desc %></td>
+	            <td><a href="#" class="btn btn-default">Set Gallery</a>
+	            	<%= link_to 'Edit', edit_supplier_supply_path(current_user, @supply), class: "btn btn-info" %>
+	        <a href="#" class="btn btn-danger">Remove</a></td>
+	          </tr>
+	        <% end %>
+	        </tbody>
+	      </table>
+      </div>
+	</div>
+
+	<div class="row">
+		<h2 class="supply-header pull-left">Bundle</h2>
+		<!-- <a href="#" class="pull-right btn btn-warning pull-bottom">Add Bundle</a> -->
+		<div bundle-panel>
+			
+		</div>
+		<div class="col-md-12">
+			<table class="table table-bordered">
+	        <thead>
+	          <tr>
+	            <th>Supply Name</th>
+	            <th>Pricing model</th>
+	            <th>Price</th>
+	            <th>Description</th>
+	            <th>Action</th>
+	          </tr>
+	        </thead>
+	        <tbody>
+	        <% @supply.each do |s| %>
+	          <tr>
+	            <td><%= s.supply_name %></td>
+	            <td><%= s.pricing %></td>
+	            <td>PHP <%= s.supply_price %></td>
+	            <td><%= s.supply_desc %></td>
+	            <td><a href="#" class="btn btn-default">Set Gallery</a>
+	            	<%= link_to 'Edit', edit_supplier_supply_path(current_user, @supply), class: "btn btn-info" %>
+	        <a href="#" class="btn btn-danger">Remove</a></td>
+	          </tr>
+	        <% end %>
+	        </tbody>
+	      </table>
+      </div>
+	</div>
+</div>
